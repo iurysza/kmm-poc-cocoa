@@ -24,6 +24,6 @@ s.platform      = :ios, "10.0"
 s.ios.vendored_frameworks = 'kmm-poc.framework'
 #s.swift_version = "Swift version of the framework"
 # s.swift_version = "4.1"
-s.source        = { :git => "git@github.com:iurysza/kmm-poc-cocoa" }
+s.source        = { :git => "git@github.com:iurysza/kmm-poc-cocoa.git" }
 s.exclude_files = "Classes/Exclude"
 end
