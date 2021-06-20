@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   #
 s.name          = "kmm-poc"
 #s.version      = "INITIAL_VERSION OR TAG"
-s.version       = "1.0.4"
+s.version       = "1.0.5"
 s.summary       = "A KMM poc"
 s.homepage      = "https://github.com/iurysza/kmm-poc-cocoa"
 s.description   = "KMM for building SDKs"
@@ -25,5 +25,6 @@ s.ios.vendored_frameworks = 'kmm-poc.framework'
 #s.swift_version = "Swift version of the framework"
 # s.swift_version = "4.1"
 s.source        = { :git => "https://github.com/iurysza/kmm-poc-cocoa.git", :tag => "v#{s.version}" }
+s.source_files  = "Classes/*.{h,m}"
 s.exclude_files = "Classes/Exclude"
 end
