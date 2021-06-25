@@ -1,6 +1,0 @@
-framework module kmm_poc {
-    umbrella header "kmm_poc.h"
-
-    export *
-    module * { export * }
-}
