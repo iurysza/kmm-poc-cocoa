@@ -277,14 +277,6 @@ __attribute__((swift_name("AppDatabaseCompanion")))
 @property (readonly) id<KmmpocRuntimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
 @end;
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DatabaseDriverFactory")))
-@interface KmmpocDatabaseDriverFactory : KmmpocBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (id<KmmpocRuntimeSqlDriver>)createDriver __attribute__((swift_name("createDriver()")));
-@end;
-
 __attribute__((swift_name("AppDatabaseQueries")))
 @protocol KmmpocAppDatabaseQueries <KmmpocRuntimeTransacter>
 @required
@@ -296,6 +288,14 @@ __attribute__((swift_name("AppDatabaseQueries")))
 - (KmmpocRuntimeQuery<id> *)selectAllLaunchesInfoMapper:(id (^)(KmmpocLong *, NSString *, KmmpocInt *, NSString *, NSString * _Nullable, KmmpocBoolean * _Nullable, NSString *, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))mapper __attribute__((swift_name("selectAllLaunchesInfo(mapper:)")));
 - (KmmpocRuntimeQuery<KmmpocRocket_ *> *)selectRocketByIdId:(NSString *)id __attribute__((swift_name("selectRocketById(id:)")));
 - (KmmpocRuntimeQuery<id> *)selectRocketByIdId:(NSString *)id mapper:(id (^)(NSString *, NSString *, NSString *))mapper __attribute__((swift_name("selectRocketById(id:mapper:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DatabaseDriverFactory")))
+@interface KmmpocDatabaseDriverFactory : KmmpocBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<KmmpocRuntimeSqlDriver>)createDriver __attribute__((swift_name("createDriver()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

@@ -5,7 +5,7 @@
 	<key>CFBundleExecutable</key>
 	<string>kmmpoc</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.iurysza.learn.kmmpoc</string>
+	<string>com.iurysza.learn.kmmpoc.shared.kmmpoc</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
