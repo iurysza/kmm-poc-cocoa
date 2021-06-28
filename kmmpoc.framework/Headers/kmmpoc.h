@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class KmmpocHackernewsApi, KmmpocDatabaseDriverFactory, KmmpocHitStore, KmmpocHit, KmmpocArticlesResponse, KmmpocAuthor, KmmpocStoryText, KmmpocTitle, KmmpocUrl, KmmpocHighlightResult, KmmpocLinks, KmmpocRocket, KmmpocRocketLaunch, KmmpocSelectAllLaunchesInfo, KmmpocRuntimeQuery<__covariant RowType>, KmmpocRocket_, KmmpocLaunch, KmmpocKotlinThrowable, KmmpocKotlinArray<T>, KmmpocKotlinException, KmmpocKotlinRuntimeException, KmmpocKotlinIllegalStateException, KmmpocRuntimeTransacterTransaction, KmmpocKotlinx_serialization_coreSerializersModule, KmmpocKotlinx_serialization_coreSerialKind, KmmpocKotlinNothing, KmmpocKotlinx_serialization_coreUpdateMode, KmmpocKotlinByteArray, KmmpocKotlinEnum<E>, KmmpocKotlinByteIterator;
+@class KmmpocDatabaseDriverFactory, KmmpocHitStore, KmmpocHit, KmmpocArticlesResponse, KmmpocAuthor, KmmpocStoryText, KmmpocTitle, KmmpocUrl, KmmpocHighlightResult, KmmpocLinks, KmmpocRocket, KmmpocRocketLaunch, KmmpocSelectAllLaunchesInfo, KmmpocRuntimeQuery<__covariant RowType>, KmmpocRocket_, KmmpocLaunch, KmmpocKotlinThrowable, KmmpocKotlinArray<T>, KmmpocKotlinException, KmmpocKotlinRuntimeException, KmmpocKotlinIllegalStateException, KmmpocRuntimeTransacterTransaction, KmmpocKotlinx_serialization_coreSerializersModule, KmmpocKotlinx_serialization_coreSerialKind, KmmpocKotlinNothing, KmmpocKotlinx_serialization_coreUpdateMode, KmmpocKotlinByteArray, KmmpocKotlinEnum<E>, KmmpocKotlinByteIterator;
 
 @protocol KmmpocKotlinx_serialization_coreKSerializer, KmmpocRuntimeTransactionWithoutReturn, KmmpocRuntimeTransactionWithReturn, KmmpocRuntimeTransacter, KmmpocRuntimeSqlDriver, KmmpocAppDatabaseQueries, KmmpocHackernewsDatabaseQueries, KmmpocHackernewsDatabase, KmmpocRuntimeSqlDriverSchema, KmmpocKotlinx_serialization_coreEncoder, KmmpocKotlinx_serialization_coreSerialDescriptor, KmmpocKotlinx_serialization_coreSerializationStrategy, KmmpocKotlinx_serialization_coreDecoder, KmmpocKotlinx_serialization_coreDeserializationStrategy, KmmpocRuntimeSqlCursor, KmmpocRuntimeQueryListener, KmmpocRuntimeTransactionCallbacks, KmmpocRuntimeSqlPreparedStatement, KmmpocRuntimeCloseable, KmmpocKotlinIterator, KmmpocKotlinx_serialization_coreCompositeEncoder, KmmpocKotlinAnnotation, KmmpocKotlinx_serialization_coreCompositeDecoder, KmmpocKotlinx_serialization_coreSerializersModuleCollector, KmmpocKotlinKClass, KmmpocKotlinComparable, KmmpocKotlinKDeclarationContainer, KmmpocKotlinKAnnotatedElement, KmmpocKotlinKClassifier;
 
@@ -139,9 +139,9 @@ __attribute__((swift_name("KotlinBoolean")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("HackernewsSDK")))
-@interface KmmpocHackernewsSDK : KmmpocBase
-- (instancetype)initWithHackerNewsApi:(KmmpocHackernewsApi *)hackerNewsApi databaseDriverFactory:(KmmpocDatabaseDriverFactory *)databaseDriverFactory __attribute__((swift_name("init(hackerNewsApi:databaseDriverFactory:)"))) __attribute__((objc_designated_initializer));
+__attribute__((swift_name("HackerNewsSDK")))
+@interface KmmpocHackerNewsSDK : KmmpocBase
+- (instancetype)initWithDatabaseDriverFactory:(KmmpocDatabaseDriverFactory *)databaseDriverFactory __attribute__((swift_name("init(databaseDriverFactory:)"))) __attribute__((objc_designated_initializer));
 
 /**
  @note This method converts instances of Exception to errors.
@@ -466,27 +466,6 @@ __attribute__((swift_name("HackernewsApi")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("HackernewsApi.Companion")))
 @interface KmmpocHackernewsApiCompanion : KmmpocBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SpaceXApi")))
-@interface KmmpocSpaceXApi : KmmpocBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-
-/**
- @note This method converts instances of CancellationException to errors.
- Other uncaught Kotlin exceptions are fatal.
-*/
-- (void)getAllLaunchesWithCompletionHandler:(void (^)(NSArray<KmmpocRocketLaunch *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getAllLaunches(completionHandler:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SpaceXApi.Companion")))
-@interface KmmpocSpaceXApiCompanion : KmmpocBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
