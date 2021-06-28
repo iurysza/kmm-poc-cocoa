@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class KmmpocDatabaseDriverFactory, KmmpocRocketLaunch, KmmpocLinks, KmmpocRocket, KmmpocSelectAllLaunchesInfo, KmmpocRuntimeQuery<__covariant RowType>, KmmpocRocket_, KmmpocLaunch, KmmpocKotlinThrowable, KmmpocKotlinArray<T>, KmmpocKotlinException, KmmpocKotlinRuntimeException, KmmpocKotlinIllegalStateException, KmmpocRuntimeTransacterTransaction, KmmpocKotlinx_serialization_coreSerializersModule, KmmpocKotlinx_serialization_coreSerialKind, KmmpocKotlinNothing, KmmpocKotlinx_serialization_coreUpdateMode, KmmpocKotlinByteArray, KmmpocKotlinEnum<E>, KmmpocKotlinByteIterator;
+@class KmmpocHackernewsApi, KmmpocDatabaseDriverFactory, KmmpocHitStore, KmmpocHit, KmmpocArticlesResponse, KmmpocAuthor, KmmpocStoryText, KmmpocTitle, KmmpocUrl, KmmpocHighlightResult, KmmpocLinks, KmmpocRocket, KmmpocRocketLaunch, KmmpocSelectAllLaunchesInfo, KmmpocRuntimeQuery<__covariant RowType>, KmmpocRocket_, KmmpocLaunch, KmmpocKotlinThrowable, KmmpocKotlinArray<T>, KmmpocKotlinException, KmmpocKotlinRuntimeException, KmmpocKotlinIllegalStateException, KmmpocRuntimeTransacterTransaction, KmmpocKotlinx_serialization_coreSerializersModule, KmmpocKotlinx_serialization_coreSerialKind, KmmpocKotlinNothing, KmmpocKotlinx_serialization_coreUpdateMode, KmmpocKotlinByteArray, KmmpocKotlinEnum<E>, KmmpocKotlinByteIterator;
 
-@protocol KmmpocKotlinx_serialization_coreKSerializer, KmmpocAppDatabaseQueries, KmmpocRuntimeTransactionWithoutReturn, KmmpocRuntimeTransactionWithReturn, KmmpocRuntimeTransacter, KmmpocAppDatabase, KmmpocRuntimeSqlDriver, KmmpocRuntimeSqlDriverSchema, KmmpocKotlinx_serialization_coreEncoder, KmmpocKotlinx_serialization_coreSerialDescriptor, KmmpocKotlinx_serialization_coreSerializationStrategy, KmmpocKotlinx_serialization_coreDecoder, KmmpocKotlinx_serialization_coreDeserializationStrategy, KmmpocRuntimeTransactionCallbacks, KmmpocRuntimeSqlPreparedStatement, KmmpocRuntimeSqlCursor, KmmpocRuntimeCloseable, KmmpocRuntimeQueryListener, KmmpocKotlinIterator, KmmpocKotlinx_serialization_coreCompositeEncoder, KmmpocKotlinAnnotation, KmmpocKotlinx_serialization_coreCompositeDecoder, KmmpocKotlinx_serialization_coreSerializersModuleCollector, KmmpocKotlinKClass, KmmpocKotlinComparable, KmmpocKotlinKDeclarationContainer, KmmpocKotlinKAnnotatedElement, KmmpocKotlinKClassifier;
+@protocol KmmpocKotlinx_serialization_coreKSerializer, KmmpocRuntimeTransactionWithoutReturn, KmmpocRuntimeTransactionWithReturn, KmmpocRuntimeTransacter, KmmpocRuntimeSqlDriver, KmmpocAppDatabaseQueries, KmmpocHackernewsDatabaseQueries, KmmpocHackernewsDatabase, KmmpocRuntimeSqlDriverSchema, KmmpocKotlinx_serialization_coreEncoder, KmmpocKotlinx_serialization_coreSerialDescriptor, KmmpocKotlinx_serialization_coreSerializationStrategy, KmmpocKotlinx_serialization_coreDecoder, KmmpocKotlinx_serialization_coreDeserializationStrategy, KmmpocRuntimeSqlCursor, KmmpocRuntimeQueryListener, KmmpocRuntimeTransactionCallbacks, KmmpocRuntimeSqlPreparedStatement, KmmpocRuntimeCloseable, KmmpocKotlinIterator, KmmpocKotlinx_serialization_coreCompositeEncoder, KmmpocKotlinAnnotation, KmmpocKotlinx_serialization_coreCompositeDecoder, KmmpocKotlinx_serialization_coreSerializersModuleCollector, KmmpocKotlinKClass, KmmpocKotlinComparable, KmmpocKotlinKDeclarationContainer, KmmpocKotlinKAnnotatedElement, KmmpocKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -139,15 +139,157 @@ __attribute__((swift_name("KotlinBoolean")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("SpaceXSDK")))
-@interface KmmpocSpaceXSDK : KmmpocBase
-- (instancetype)initWithDatabaseDriverFactory:(KmmpocDatabaseDriverFactory *)databaseDriverFactory __attribute__((swift_name("init(databaseDriverFactory:)"))) __attribute__((objc_designated_initializer));
+__attribute__((swift_name("HackernewsSDK")))
+@interface KmmpocHackernewsSDK : KmmpocBase
+- (instancetype)initWithHackerNewsApi:(KmmpocHackernewsApi *)hackerNewsApi databaseDriverFactory:(KmmpocDatabaseDriverFactory *)databaseDriverFactory __attribute__((swift_name("init(hackerNewsApi:databaseDriverFactory:)"))) __attribute__((objc_designated_initializer));
 
 /**
  @note This method converts instances of Exception to errors.
  Other uncaught Kotlin exceptions are fatal.
 */
-- (void)getLaunchesForceReload:(BOOL)forceReload completionHandler:(void (^)(NSArray<KmmpocRocketLaunch *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getLaunches(forceReload:completionHandler:)")));
+- (void)getArticlesForceReload:(BOOL)forceReload completionHandler:(void (^)(NSArray<KmmpocHitStore *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getArticles(forceReload:completionHandler:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ArticlesResponse")))
+@interface KmmpocArticlesResponse : KmmpocBase
+- (instancetype)initWithExhaustiveNbHits:(BOOL)exhaustiveNbHits hits:(NSArray<KmmpocHit *> *)hits hitsPerPage:(int32_t)hitsPerPage nbHits:(int32_t)nbHits nbPages:(int32_t)nbPages page:(int32_t)page params:(NSString *)params processingTimeMS:(int32_t)processingTimeMS query:(NSString *)query __attribute__((swift_name("init(exhaustiveNbHits:hits:hitsPerPage:nbHits:nbPages:page:params:processingTimeMS:query:)"))) __attribute__((objc_designated_initializer));
+- (BOOL)component1 __attribute__((swift_name("component1()")));
+- (NSArray<KmmpocHit *> *)component2 __attribute__((swift_name("component2()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (int32_t)component4 __attribute__((swift_name("component4()")));
+- (int32_t)component5 __attribute__((swift_name("component5()")));
+- (int32_t)component6 __attribute__((swift_name("component6()")));
+- (NSString *)component7 __attribute__((swift_name("component7()")));
+- (int32_t)component8 __attribute__((swift_name("component8()")));
+- (NSString *)component9 __attribute__((swift_name("component9()")));
+- (KmmpocArticlesResponse *)doCopyExhaustiveNbHits:(BOOL)exhaustiveNbHits hits:(NSArray<KmmpocHit *> *)hits hitsPerPage:(int32_t)hitsPerPage nbHits:(int32_t)nbHits nbPages:(int32_t)nbPages page:(int32_t)page params:(NSString *)params processingTimeMS:(int32_t)processingTimeMS query:(NSString *)query __attribute__((swift_name("doCopy(exhaustiveNbHits:hits:hitsPerPage:nbHits:nbPages:page:params:processingTimeMS:query:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) BOOL exhaustiveNbHits __attribute__((swift_name("exhaustiveNbHits")));
+@property (readonly) NSArray<KmmpocHit *> *hits __attribute__((swift_name("hits")));
+@property (readonly) int32_t hitsPerPage __attribute__((swift_name("hitsPerPage")));
+@property (readonly) int32_t nbHits __attribute__((swift_name("nbHits")));
+@property (readonly) int32_t nbPages __attribute__((swift_name("nbPages")));
+@property (readonly) int32_t page __attribute__((swift_name("page")));
+@property (readonly) NSString *params __attribute__((swift_name("params")));
+@property (readonly) int32_t processingTimeMS __attribute__((swift_name("processingTimeMS")));
+@property (readonly) NSString *query __attribute__((swift_name("query")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("ArticlesResponse.Companion")))
+@interface KmmpocArticlesResponseCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Author")))
+@interface KmmpocAuthor : KmmpocBase
+- (instancetype)initWithMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("init(matchLevel:matchedWords:value:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSArray<NSString *> *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (KmmpocAuthor *)doCopyMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("doCopy(matchLevel:matchedWords:value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *matchLevel __attribute__((swift_name("matchLevel")));
+@property (readonly) NSArray<NSString *> *matchedWords __attribute__((swift_name("matchedWords")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Author.Companion")))
+@interface KmmpocAuthorCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HighlightResult")))
+@interface KmmpocHighlightResult : KmmpocBase
+- (instancetype)initWithAuthor:(KmmpocAuthor * _Nullable)author story_text:(KmmpocStoryText * _Nullable)story_text title:(KmmpocTitle * _Nullable)title url:(KmmpocUrl * _Nullable)url __attribute__((swift_name("init(author:story_text:title:url:)"))) __attribute__((objc_designated_initializer));
+- (KmmpocAuthor * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (KmmpocStoryText * _Nullable)component2 __attribute__((swift_name("component2()")));
+- (KmmpocTitle * _Nullable)component3 __attribute__((swift_name("component3()")));
+- (KmmpocUrl * _Nullable)component4 __attribute__((swift_name("component4()")));
+- (KmmpocHighlightResult *)doCopyAuthor:(KmmpocAuthor * _Nullable)author story_text:(KmmpocStoryText * _Nullable)story_text title:(KmmpocTitle * _Nullable)title url:(KmmpocUrl * _Nullable)url __attribute__((swift_name("doCopy(author:story_text:title:url:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) KmmpocAuthor * _Nullable author __attribute__((swift_name("author")));
+@property (readonly) KmmpocStoryText * _Nullable story_text __attribute__((swift_name("story_text")));
+@property (readonly) KmmpocTitle * _Nullable title __attribute__((swift_name("title")));
+@property (readonly) KmmpocUrl * _Nullable url __attribute__((swift_name("url")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HighlightResult.Companion")))
+@interface KmmpocHighlightResultCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Hit")))
+@interface KmmpocHit : KmmpocBase
+- (instancetype)initWithHighlightResult:(KmmpocHighlightResult * _Nullable)highlightResult tags:(NSArray<NSString *> *)tags author:(NSString *)author commentText:(NSString * _Nullable)commentText createdAt:(NSString *)createdAt createdAtI:(int32_t)createdAtI numComments:(KmmpocInt * _Nullable)numComments objectID:(NSString * _Nullable)objectID parentId:(NSString * _Nullable)parentId points:(KmmpocInt * _Nullable)points relevancyScore:(KmmpocInt * _Nullable)relevancyScore storyId:(NSString * _Nullable)storyId storyText:(NSString * _Nullable)storyText storyTitle:(NSString * _Nullable)storyTitle storyUrl:(NSString * _Nullable)storyUrl title:(NSString * _Nullable)title url:(NSString * _Nullable)url __attribute__((swift_name("init(highlightResult:tags:author:commentText:createdAt:createdAtI:numComments:objectID:parentId:points:relevancyScore:storyId:storyText:storyTitle:storyUrl:title:url:)"))) __attribute__((objc_designated_initializer));
+- (KmmpocHighlightResult * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (KmmpocInt * _Nullable)component10 __attribute__((swift_name("component10()")));
+- (KmmpocInt * _Nullable)component11 __attribute__((swift_name("component11()")));
+- (NSString * _Nullable)component12 __attribute__((swift_name("component12()")));
+- (NSString * _Nullable)component13 __attribute__((swift_name("component13()")));
+- (NSString * _Nullable)component14 __attribute__((swift_name("component14()")));
+- (NSString * _Nullable)component15 __attribute__((swift_name("component15()")));
+- (NSString * _Nullable)component16 __attribute__((swift_name("component16()")));
+- (NSString * _Nullable)component17 __attribute__((swift_name("component17()")));
+- (NSArray<NSString *> *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (NSString * _Nullable)component4 __attribute__((swift_name("component4()")));
+- (NSString *)component5 __attribute__((swift_name("component5()")));
+- (int32_t)component6 __attribute__((swift_name("component6()")));
+- (KmmpocInt * _Nullable)component7 __attribute__((swift_name("component7()")));
+- (NSString * _Nullable)component8 __attribute__((swift_name("component8()")));
+- (NSString * _Nullable)component9 __attribute__((swift_name("component9()")));
+- (KmmpocHit *)doCopyHighlightResult:(KmmpocHighlightResult * _Nullable)highlightResult tags:(NSArray<NSString *> *)tags author:(NSString *)author commentText:(NSString * _Nullable)commentText createdAt:(NSString *)createdAt createdAtI:(int32_t)createdAtI numComments:(KmmpocInt * _Nullable)numComments objectID:(NSString * _Nullable)objectID parentId:(NSString * _Nullable)parentId points:(KmmpocInt * _Nullable)points relevancyScore:(KmmpocInt * _Nullable)relevancyScore storyId:(NSString * _Nullable)storyId storyText:(NSString * _Nullable)storyText storyTitle:(NSString * _Nullable)storyTitle storyUrl:(NSString * _Nullable)storyUrl title:(NSString * _Nullable)title url:(NSString * _Nullable)url __attribute__((swift_name("doCopy(highlightResult:tags:author:commentText:createdAt:createdAtI:numComments:objectID:parentId:points:relevancyScore:storyId:storyText:storyTitle:storyUrl:title:url:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *author __attribute__((swift_name("author")));
+@property (readonly) NSString * _Nullable commentText __attribute__((swift_name("commentText")));
+@property (readonly) NSString *createdAt __attribute__((swift_name("createdAt")));
+@property (readonly) int32_t createdAtI __attribute__((swift_name("createdAtI")));
+@property (readonly) KmmpocHighlightResult * _Nullable highlightResult __attribute__((swift_name("highlightResult")));
+@property (readonly) KmmpocInt * _Nullable numComments __attribute__((swift_name("numComments")));
+@property (readonly) NSString * _Nullable objectID __attribute__((swift_name("objectID")));
+@property (readonly) NSString * _Nullable parentId __attribute__((swift_name("parentId")));
+@property (readonly) KmmpocInt * _Nullable points __attribute__((swift_name("points")));
+@property (readonly) KmmpocInt * _Nullable relevancyScore __attribute__((swift_name("relevancyScore")));
+@property (readonly) NSString * _Nullable storyId __attribute__((swift_name("storyId")));
+@property (readonly) NSString * _Nullable storyText __attribute__((swift_name("storyText")));
+@property (readonly) NSString * _Nullable storyTitle __attribute__((swift_name("storyTitle")));
+@property (readonly) NSString * _Nullable storyUrl __attribute__((swift_name("storyUrl")));
+@property (readonly) NSArray<NSString *> *tags __attribute__((swift_name("tags")));
+@property (readonly) NSString * _Nullable title __attribute__((swift_name("title")));
+@property (readonly) NSString * _Nullable url __attribute__((swift_name("url")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Hit.Companion")))
+@interface KmmpocHitCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -234,6 +376,102 @@ __attribute__((swift_name("RocketLaunch.Companion")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StoryText")))
+@interface KmmpocStoryText : KmmpocBase
+- (instancetype)initWithMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("init(matchLevel:matchedWords:value:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSArray<NSString *> *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (KmmpocStoryText *)doCopyMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("doCopy(matchLevel:matchedWords:value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *matchLevel __attribute__((swift_name("matchLevel")));
+@property (readonly) NSArray<NSString *> *matchedWords __attribute__((swift_name("matchedWords")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("StoryText.Companion")))
+@interface KmmpocStoryTextCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Title")))
+@interface KmmpocTitle : KmmpocBase
+- (instancetype)initWithMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("init(matchLevel:matchedWords:value:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSArray<NSString *> *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (KmmpocTitle *)doCopyMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("doCopy(matchLevel:matchedWords:value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *matchLevel __attribute__((swift_name("matchLevel")));
+@property (readonly) NSArray<NSString *> *matchedWords __attribute__((swift_name("matchedWords")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Title.Companion")))
+@interface KmmpocTitleCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Url")))
+@interface KmmpocUrl : KmmpocBase
+- (instancetype)initWithMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("init(matchLevel:matchedWords:value:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSArray<NSString *> *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (KmmpocUrl *)doCopyMatchLevel:(NSString *)matchLevel matchedWords:(NSArray<NSString *> *)matchedWords value:(NSString *)value __attribute__((swift_name("doCopy(matchLevel:matchedWords:value:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *matchLevel __attribute__((swift_name("matchLevel")));
+@property (readonly) NSArray<NSString *> *matchedWords __attribute__((swift_name("matchedWords")));
+@property (readonly) NSString *value __attribute__((swift_name("value")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Url.Companion")))
+@interface KmmpocUrlCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HackernewsApi")))
+@interface KmmpocHackernewsApi : KmmpocBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+
+/**
+ @note This method converts instances of CancellationException to errors.
+ Other uncaught Kotlin exceptions are fatal.
+*/
+- (void)getAllHitsWithCompletionHandler:(void (^)(NSArray<KmmpocHit *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getAllHits(completionHandler:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HackernewsApi.Companion")))
+@interface KmmpocHackernewsApiCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("SpaceXApi")))
 @interface KmmpocSpaceXApi : KmmpocBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -261,22 +499,6 @@ __attribute__((swift_name("RuntimeTransacter")))
 - (id _Nullable)transactionWithResultNoEnclosing:(BOOL)noEnclosing bodyWithReturn:(id _Nullable (^)(id<KmmpocRuntimeTransactionWithReturn>))bodyWithReturn __attribute__((swift_name("transactionWithResult(noEnclosing:bodyWithReturn:)")));
 @end;
 
-__attribute__((swift_name("AppDatabase")))
-@protocol KmmpocAppDatabase <KmmpocRuntimeTransacter>
-@required
-@property (readonly) id<KmmpocAppDatabaseQueries> appDatabaseQueries __attribute__((swift_name("appDatabaseQueries")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("AppDatabaseCompanion")))
-@interface KmmpocAppDatabaseCompanion : KmmpocBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-- (id<KmmpocAppDatabase>)invokeDriver:(id<KmmpocRuntimeSqlDriver>)driver __attribute__((swift_name("invoke(driver:)")));
-@property (readonly) id<KmmpocRuntimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
-@end;
-
 __attribute__((swift_name("AppDatabaseQueries")))
 @protocol KmmpocAppDatabaseQueries <KmmpocRuntimeTransacter>
 @required
@@ -296,6 +518,58 @@ __attribute__((swift_name("DatabaseDriverFactory")))
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (id<KmmpocRuntimeSqlDriver>)createDriver __attribute__((swift_name("createDriver()")));
+@end;
+
+__attribute__((swift_name("HackernewsDatabase")))
+@protocol KmmpocHackernewsDatabase <KmmpocRuntimeTransacter>
+@required
+@property (readonly) id<KmmpocAppDatabaseQueries> appDatabaseQueries __attribute__((swift_name("appDatabaseQueries")));
+@property (readonly) id<KmmpocHackernewsDatabaseQueries> hackernewsDatabaseQueries __attribute__((swift_name("hackernewsDatabaseQueries")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HackernewsDatabaseCompanion")))
+@interface KmmpocHackernewsDatabaseCompanion : KmmpocBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<KmmpocHackernewsDatabase>)invokeDriver:(id<KmmpocRuntimeSqlDriver>)driver __attribute__((swift_name("invoke(driver:)")));
+@property (readonly) id<KmmpocRuntimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
+@end;
+
+__attribute__((swift_name("HackernewsDatabaseQueries")))
+@protocol KmmpocHackernewsDatabaseQueries <KmmpocRuntimeTransacter>
+@required
+- (void)insertHitUrl:(NSString *)url title:(NSString *)title storyId:(NSString *)storyId storyText:(NSString *)storyText storyTitle:(NSString *)storyTitle storyUrl:(NSString *)storyUrl relevancyScore:(int64_t)relevancyScore __attribute__((swift_name("insertHit(url:title:storyId:storyText:storyTitle:storyUrl:relevancyScore:)")));
+- (void)removeAllHits __attribute__((swift_name("removeAllHits()")));
+- (KmmpocRuntimeQuery<KmmpocHitStore *> *)selectAllHits __attribute__((swift_name("selectAllHits()")));
+- (KmmpocRuntimeQuery<id> *)selectAllHitsMapper:(id (^)(NSString *, NSString *, NSString *, NSString *, NSString *, KmmpocLong *, NSString *))mapper __attribute__((swift_name("selectAllHits(mapper:)")));
+- (KmmpocRuntimeQuery<KmmpocHitStore *> *)selectHitByIdStoryId:(NSString *)storyId __attribute__((swift_name("selectHitById(storyId:)")));
+- (KmmpocRuntimeQuery<id> *)selectHitByIdStoryId:(NSString *)storyId mapper:(id (^)(NSString *, NSString *, NSString *, NSString *, NSString *, KmmpocLong *, NSString *))mapper __attribute__((swift_name("selectHitById(storyId:mapper:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("HitStore")))
+@interface KmmpocHitStore : KmmpocBase
+- (instancetype)initWithUrl:(NSString *)url title:(NSString *)title storyUrl:(NSString *)storyUrl storyTitle:(NSString *)storyTitle storyId:(NSString *)storyId relevancyScore:(int64_t)relevancyScore storyText:(NSString *)storyText __attribute__((swift_name("init(url:title:storyUrl:storyTitle:storyId:relevancyScore:storyText:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (NSString *)component4 __attribute__((swift_name("component4()")));
+- (NSString *)component5 __attribute__((swift_name("component5()")));
+- (int64_t)component6 __attribute__((swift_name("component6()")));
+- (NSString *)component7 __attribute__((swift_name("component7()")));
+- (KmmpocHitStore *)doCopyUrl:(NSString *)url title:(NSString *)title storyUrl:(NSString *)storyUrl storyTitle:(NSString *)storyTitle storyId:(NSString *)storyId relevancyScore:(int64_t)relevancyScore storyText:(NSString *)storyText __attribute__((swift_name("doCopy(url:title:storyUrl:storyTitle:storyId:relevancyScore:storyText:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int64_t relevancyScore __attribute__((swift_name("relevancyScore")));
+@property (readonly) NSString *storyId __attribute__((swift_name("storyId")));
+@property (readonly) NSString *storyText __attribute__((swift_name("storyText")));
+@property (readonly) NSString *storyTitle __attribute__((swift_name("storyTitle")));
+@property (readonly) NSString *storyUrl __attribute__((swift_name("storyUrl")));
+@property (readonly) NSString *title __attribute__((swift_name("title")));
+@property (readonly) NSString *url __attribute__((swift_name("url")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -446,6 +720,19 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithCause:(KmmpocKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
 @end;
 
+__attribute__((swift_name("RuntimeQuery")))
+@interface KmmpocRuntimeQuery<__covariant RowType> : KmmpocBase
+- (instancetype)initWithQueries:(NSMutableArray<KmmpocRuntimeQuery<id> *> *)queries mapper:(RowType (^)(id<KmmpocRuntimeSqlCursor>))mapper __attribute__((swift_name("init(queries:mapper:)"))) __attribute__((objc_designated_initializer));
+- (void)addListenerListener:(id<KmmpocRuntimeQueryListener>)listener __attribute__((swift_name("addListener(listener:)")));
+- (id<KmmpocRuntimeSqlCursor>)execute __attribute__((swift_name("execute()")));
+- (NSArray<RowType> *)executeAsList __attribute__((swift_name("executeAsList()")));
+- (RowType)executeAsOne __attribute__((swift_name("executeAsOne()")));
+- (RowType _Nullable)executeAsOneOrNull __attribute__((swift_name("executeAsOneOrNull()")));
+- (void)notifyDataChanged __attribute__((swift_name("notifyDataChanged()")));
+- (void)removeListenerListener:(id<KmmpocRuntimeQueryListener>)listener __attribute__((swift_name("removeListener(listener:)")));
+@property (readonly) RowType (^mapper)(id<KmmpocRuntimeSqlCursor>) __attribute__((swift_name("mapper")));
+@end;
+
 __attribute__((swift_name("RuntimeTransactionCallbacks")))
 @protocol KmmpocRuntimeTransactionCallbacks
 @required
@@ -488,19 +775,6 @@ __attribute__((swift_name("RuntimeSqlDriverSchema")))
 - (void)createDriver:(id<KmmpocRuntimeSqlDriver>)driver __attribute__((swift_name("create(driver:)")));
 - (void)migrateDriver:(id<KmmpocRuntimeSqlDriver>)driver oldVersion:(int32_t)oldVersion newVersion:(int32_t)newVersion __attribute__((swift_name("migrate(driver:oldVersion:newVersion:)")));
 @property (readonly) int32_t version __attribute__((swift_name("version")));
-@end;
-
-__attribute__((swift_name("RuntimeQuery")))
-@interface KmmpocRuntimeQuery<__covariant RowType> : KmmpocBase
-- (instancetype)initWithQueries:(NSMutableArray<KmmpocRuntimeQuery<id> *> *)queries mapper:(RowType (^)(id<KmmpocRuntimeSqlCursor>))mapper __attribute__((swift_name("init(queries:mapper:)"))) __attribute__((objc_designated_initializer));
-- (void)addListenerListener:(id<KmmpocRuntimeQueryListener>)listener __attribute__((swift_name("addListener(listener:)")));
-- (id<KmmpocRuntimeSqlCursor>)execute __attribute__((swift_name("execute()")));
-- (NSArray<RowType> *)executeAsList __attribute__((swift_name("executeAsList()")));
-- (RowType)executeAsOne __attribute__((swift_name("executeAsOne()")));
-- (RowType _Nullable)executeAsOneOrNull __attribute__((swift_name("executeAsOneOrNull()")));
-- (void)notifyDataChanged __attribute__((swift_name("notifyDataChanged()")));
-- (void)removeListenerListener:(id<KmmpocRuntimeQueryListener>)listener __attribute__((swift_name("removeListener(listener:)")));
-@property (readonly) RowType (^mapper)(id<KmmpocRuntimeSqlCursor>) __attribute__((swift_name("mapper")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -579,6 +853,22 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) KmmpocKotlinx_serialization_coreUpdateMode *updateMode __attribute__((swift_name("updateMode"))) __attribute__((unavailable("Update mode in Decoder is deprecated for removal. Update behaviour is now considered an implementation detail of the format that should not concern serializer.")));
 @end;
 
+__attribute__((swift_name("RuntimeSqlCursor")))
+@protocol KmmpocRuntimeSqlCursor <KmmpocRuntimeCloseable>
+@required
+- (KmmpocKotlinByteArray * _Nullable)getBytesIndex:(int32_t)index __attribute__((swift_name("getBytes(index:)")));
+- (KmmpocDouble * _Nullable)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
+- (KmmpocLong * _Nullable)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
+- (NSString * _Nullable)getStringIndex:(int32_t)index __attribute__((swift_name("getString(index:)")));
+- (BOOL)next __attribute__((swift_name("next()")));
+@end;
+
+__attribute__((swift_name("RuntimeQueryListener")))
+@protocol KmmpocRuntimeQueryListener
+@required
+- (void)queryResultsChanged __attribute__((swift_name("queryResultsChanged()")));
+@end;
+
 __attribute__((swift_name("RuntimeTransacterTransaction")))
 @interface KmmpocRuntimeTransacterTransaction : KmmpocBase <KmmpocRuntimeTransactionCallbacks>
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -596,22 +886,6 @@ __attribute__((swift_name("RuntimeSqlPreparedStatement")))
 - (void)bindDoubleIndex:(int32_t)index value:(KmmpocDouble * _Nullable)value __attribute__((swift_name("bindDouble(index:value:)")));
 - (void)bindLongIndex:(int32_t)index value:(KmmpocLong * _Nullable)value __attribute__((swift_name("bindLong(index:value:)")));
 - (void)bindStringIndex:(int32_t)index value:(NSString * _Nullable)value __attribute__((swift_name("bindString(index:value:)")));
-@end;
-
-__attribute__((swift_name("RuntimeSqlCursor")))
-@protocol KmmpocRuntimeSqlCursor <KmmpocRuntimeCloseable>
-@required
-- (KmmpocKotlinByteArray * _Nullable)getBytesIndex:(int32_t)index __attribute__((swift_name("getBytes(index:)")));
-- (KmmpocDouble * _Nullable)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
-- (KmmpocLong * _Nullable)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
-- (NSString * _Nullable)getStringIndex:(int32_t)index __attribute__((swift_name("getString(index:)")));
-- (BOOL)next __attribute__((swift_name("next()")));
-@end;
-
-__attribute__((swift_name("RuntimeQueryListener")))
-@protocol KmmpocRuntimeQueryListener
-@required
-- (void)queryResultsChanged __attribute__((swift_name("queryResultsChanged()")));
 @end;
 
 __attribute__((swift_name("KotlinIterator")))
