@@ -13,7 +13,6 @@
 -  #  summary should be tweet-length, and the description more in depth.
 -  #
 -s.name          = "vaccination-tracker"
--#s.version      = "INITIAL_VERSION OR TAG"
 -s.version       = "1.0.13"
 -s.summary       = "Brazilian Covid vaccination Data per state"
 -s.homepage      = "https://github.com/iurysza/kmm-poc-cocoa"
@@ -26,3 +25,4 @@
 -# s.swift_version = "4.1"
 -s.source        = { :git => "https://github.com/iurysza/kmm-poc-cocoa.git", :tag => "v#{s.version}" }
 -s.exclude_files = "Classes/Exclude"
+end
