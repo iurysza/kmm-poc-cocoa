@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   #
 s.name          = "kmmpoc"
 #s.version      = "INITIAL_VERSION OR TAG"
-s.version       = "1.0.16"
+s.version       = "1.0.17"
 s.summary       = "A KMM poc"
 s.homepage      = "https://github.com/iurysza/kmm-poc-cocoa"
 s.description   = "KMM for building SDKs"
