@@ -12,16 +12,16 @@
 -  #  can feel like a chore to fill in it's definitely to your advantage. The
 -  #  summary should be tweet-length, and the description more in depth.
 -  #
--s.name          = "kmmpoc"
+-s.name          = "vaccination-tracker"
 -#s.version      = "INITIAL_VERSION OR TAG"
--s.version       = "1.0.6"
--s.summary       = "A KMM poc"
+-s.version       = "1.0.13"
+-s.summary       = "Brazilian Covid vaccination Data per state"
 -s.homepage      = "https://github.com/iurysza/kmm-poc-cocoa"
--s.description   = "KMM for building SDKs"
+-s.description   = "A Kotlin Multiplatform library for getting Brazilian vaccination data"
 -s.license       = "UNLICENSED"
 -s.author        = { "Iury Souza" => "iurysza@gmail.com" }
 -s.platform      = :ios, "10.0"
--s.ios.vendored_frameworks = 'kmmpoc.framework'
+-s.ios.vendored_frameworks = 'vaccination_tracker.framework'
 -#s.swift_version = "Swift version of the framework"
 -# s.swift_version = "4.1"
 -s.source        = { :git => "https://github.com/iurysza/kmm-poc-cocoa.git", :tag => "v#{s.version}" }
