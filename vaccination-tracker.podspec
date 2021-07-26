@@ -12,18 +12,17 @@ Pod::Spec.new do |s|
   #  can feel like a chore to fill in it's definitely to your advantage. The
   #  summary should be tweet-length, and the description more in depth.
   #
-s.name          = "kmmpoc"
-#s.version      = "INITIAL_VERSION OR TAG"
+s.name          = "vaccination-tracker"
 s.version       = "1.0.17"
-s.summary       = "A KMM poc"
-s.homepage      = "https://github.com/iurysza/kmm-poc-cocoa"
-s.description   = "KMM for building SDKs"
+s.summary       = "Brazilian Covid vaccination Data per state"
+s.homepage      = "https://github.com/iurysza/kmmpoc"
+s.description   = "A library that provides Brazilian vaccination data built with kotlin multiplatform"
 s.license       = "UNLICENSED"
 s.author        = { "Iury Souza" => "iurysza@gmail.com" }
 s.platform      = :ios, "10.0"
-s.ios.vendored_frameworks = 'kmmpoc.framework'
+s.ios.vendored_frameworks = 'vaccination_tracker.framework'
 #s.swift_version = "Swift version of the framework"
 # s.swift_version = "4.1"
-s.source        = { :git => "https://github.com/iurysza/kmm-poc-cocoa.git", :tag => "v#{s.version}" }
+s.source        = { :git => "https://github.com/iurysza/kmmpoc.git", :tag => "v#{s.version}" }
 s.exclude_files = "Classes/Exclude"
 end
