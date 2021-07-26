@@ -5,7 +5,7 @@
 	<key>CFBundleExecutable</key>
 	<string>vaccination_tracker</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.iurysza.learn.kmmpoc.shared.vaccination_tracker</string>
+	<string>com.github.iurysza.vaccinationtracker.vaccination_tracker</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

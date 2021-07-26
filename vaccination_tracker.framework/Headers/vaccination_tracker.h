@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class Vaccination_trackerDatabaseDriverFactory, Vaccination_trackerVaccinationDataResponseItem, Vaccination_trackerCovidVaccinationData, Vaccination_trackerAverage14days, Vaccination_trackerAverage7days, Vaccination_trackerDailyVaccinations, Vaccination_trackerTotalVaccinations, Vaccination_trackerVaccinations, Vaccination_trackerRuntimeQuery<__covariant RowType>, Vaccination_trackerKotlinThrowable, Vaccination_trackerKotlinArray<T>, Vaccination_trackerKotlinException, Vaccination_trackerKotlinRuntimeException, Vaccination_trackerKotlinIllegalStateException, Vaccination_trackerRuntimeTransacterTransaction, Vaccination_trackerKotlinx_serialization_coreSerializersModule, Vaccination_trackerKotlinx_serialization_coreSerialKind, Vaccination_trackerKotlinNothing, Vaccination_trackerKotlinByteArray, Vaccination_trackerKotlinByteIterator;
+@class Vaccination_trackerDatabaseDriverFactory, Vaccination_trackerVaccinationDataResponseItem, Vaccination_trackerCovidVaccinationData, Vaccination_trackerRuntimeQuery<__covariant RowType>, Vaccination_trackerAverage14days, Vaccination_trackerAverage7days, Vaccination_trackerDailyVaccinations, Vaccination_trackerTotalVaccinations, Vaccination_trackerVaccinations, Vaccination_trackerKotlinThrowable, Vaccination_trackerKotlinArray<T>, Vaccination_trackerKotlinException, Vaccination_trackerKotlinRuntimeException, Vaccination_trackerKotlinIllegalStateException, Vaccination_trackerRuntimeTransacterTransaction, Vaccination_trackerKotlinByteArray, Vaccination_trackerKotlinx_serialization_coreSerializersModule, Vaccination_trackerKotlinx_serialization_coreSerialKind, Vaccination_trackerKotlinNothing, Vaccination_trackerKotlinByteIterator;
 
-@protocol Vaccination_trackerKotlinx_serialization_coreKSerializer, Vaccination_trackerCovidVaccinationDatabaseQueries, Vaccination_trackerRuntimeTransactionWithoutReturn, Vaccination_trackerRuntimeTransactionWithReturn, Vaccination_trackerRuntimeTransacter, Vaccination_trackerCovidVaccinationDatabase, Vaccination_trackerRuntimeSqlDriver, Vaccination_trackerRuntimeSqlDriverSchema, Vaccination_trackerKotlinx_serialization_coreEncoder, Vaccination_trackerKotlinx_serialization_coreSerialDescriptor, Vaccination_trackerKotlinx_serialization_coreSerializationStrategy, Vaccination_trackerKotlinx_serialization_coreDecoder, Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy, Vaccination_trackerRuntimeTransactionCallbacks, Vaccination_trackerRuntimeSqlPreparedStatement, Vaccination_trackerRuntimeSqlCursor, Vaccination_trackerRuntimeCloseable, Vaccination_trackerRuntimeQueryListener, Vaccination_trackerKotlinIterator, Vaccination_trackerKotlinx_serialization_coreCompositeEncoder, Vaccination_trackerKotlinAnnotation, Vaccination_trackerKotlinx_serialization_coreCompositeDecoder, Vaccination_trackerKotlinx_serialization_coreSerializersModuleCollector, Vaccination_trackerKotlinKClass, Vaccination_trackerKotlinKDeclarationContainer, Vaccination_trackerKotlinKAnnotatedElement, Vaccination_trackerKotlinKClassifier;
+@protocol Vaccination_trackerCovidVaccinationDatabaseQueries, Vaccination_trackerRuntimeTransactionWithoutReturn, Vaccination_trackerRuntimeTransactionWithReturn, Vaccination_trackerRuntimeTransacter, Vaccination_trackerCovidVaccinationDatabase, Vaccination_trackerRuntimeSqlDriver, Vaccination_trackerRuntimeSqlDriverSchema, Vaccination_trackerKotlinx_serialization_coreKSerializer, Vaccination_trackerRuntimeTransactionCallbacks, Vaccination_trackerRuntimeSqlPreparedStatement, Vaccination_trackerRuntimeSqlCursor, Vaccination_trackerRuntimeCloseable, Vaccination_trackerRuntimeQueryListener, Vaccination_trackerKotlinx_serialization_coreEncoder, Vaccination_trackerKotlinx_serialization_coreSerialDescriptor, Vaccination_trackerKotlinx_serialization_coreSerializationStrategy, Vaccination_trackerKotlinx_serialization_coreDecoder, Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy, Vaccination_trackerKotlinIterator, Vaccination_trackerKotlinx_serialization_coreCompositeEncoder, Vaccination_trackerKotlinAnnotation, Vaccination_trackerKotlinx_serialization_coreCompositeDecoder, Vaccination_trackerKotlinx_serialization_coreSerializersModuleCollector, Vaccination_trackerKotlinKClass, Vaccination_trackerKotlinKDeclarationContainer, Vaccination_trackerKotlinKAnnotatedElement, Vaccination_trackerKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -154,6 +154,80 @@ __attribute__((swift_name("VaccinationTracker")))
  Other uncaught Kotlin exceptions are fatal.
 */
 - (void)getVaccinationDataLatest:(BOOL)latest completionHandler:(void (^)(NSArray<Vaccination_trackerCovidVaccinationData *> * _Nullable, NSError * _Nullable))completionHandler __attribute__((swift_name("getVaccinationData(latest:completionHandler:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("CovidVaccinationData")))
+@interface Vaccination_trackerCovidVaccinationData : Vaccination_trackerBase
+- (instancetype)initWithIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("init(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (double)component10 __attribute__((swift_name("component10()")));
+- (NSString *)component11 __attribute__((swift_name("component11()")));
+- (int64_t)component12 __attribute__((swift_name("component12()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (int64_t)component3 __attribute__((swift_name("component3()")));
+- (double)component4 __attribute__((swift_name("component4()")));
+- (int64_t)component5 __attribute__((swift_name("component5()")));
+- (double)component6 __attribute__((swift_name("component6()")));
+- (int64_t)component7 __attribute__((swift_name("component7()")));
+- (double)component8 __attribute__((swift_name("component8()")));
+- (int64_t)component9 __attribute__((swift_name("component9()")));
+- (Vaccination_trackerCovidVaccinationData *)doCopyIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("doCopy(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) int64_t firstDose __attribute__((swift_name("firstDose")));
+@property (readonly) double firstDosePercentage __attribute__((swift_name("firstDosePercentage")));
+@property (readonly) int64_t fullyVaccinated __attribute__((swift_name("fullyVaccinated")));
+@property (readonly) double fullyVaccinatedPercentage __attribute__((swift_name("fullyVaccinatedPercentage")));
+@property (readonly) NSString *isoCode __attribute__((swift_name("isoCode")));
+@property (readonly) NSString *lastUpdate __attribute__((swift_name("lastUpdate")));
+@property (readonly) int64_t secondDose __attribute__((swift_name("secondDose")));
+@property (readonly) double secondDosePercentage __attribute__((swift_name("secondDosePercentage")));
+@property (readonly) int64_t singleDose __attribute__((swift_name("singleDose")));
+@property (readonly) double singleDosePercentage __attribute__((swift_name("singleDosePercentage")));
+@property (readonly) NSString *state __attribute__((swift_name("state")));
+@property (readonly) int64_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((swift_name("RuntimeTransacter")))
+@protocol Vaccination_trackerRuntimeTransacter
+@required
+- (void)transactionNoEnclosing:(BOOL)noEnclosing body:(void (^)(id<Vaccination_trackerRuntimeTransactionWithoutReturn>))body __attribute__((swift_name("transaction(noEnclosing:body:)")));
+- (id _Nullable)transactionWithResultNoEnclosing:(BOOL)noEnclosing bodyWithReturn:(id _Nullable (^)(id<Vaccination_trackerRuntimeTransactionWithReturn>))bodyWithReturn __attribute__((swift_name("transactionWithResult(noEnclosing:bodyWithReturn:)")));
+@end;
+
+__attribute__((swift_name("CovidVaccinationDatabase")))
+@protocol Vaccination_trackerCovidVaccinationDatabase <Vaccination_trackerRuntimeTransacter>
+@required
+@property (readonly) id<Vaccination_trackerCovidVaccinationDatabaseQueries> covidVaccinationDatabaseQueries __attribute__((swift_name("covidVaccinationDatabaseQueries")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("CovidVaccinationDatabaseCompanion")))
+@interface Vaccination_trackerCovidVaccinationDatabaseCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerCovidVaccinationDatabase>)invokeDriver:(id<Vaccination_trackerRuntimeSqlDriver>)driver __attribute__((swift_name("invoke(driver:)")));
+@property (readonly) id<Vaccination_trackerRuntimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
+@end;
+
+__attribute__((swift_name("CovidVaccinationDatabaseQueries")))
+@protocol Vaccination_trackerCovidVaccinationDatabaseQueries <Vaccination_trackerRuntimeTransacter>
+@required
+- (void)clear __attribute__((swift_name("clear()")));
+- (Vaccination_trackerRuntimeQuery<Vaccination_trackerCovidVaccinationData *> *)getVaccinationData __attribute__((swift_name("getVaccinationData()")));
+- (Vaccination_trackerRuntimeQuery<id> *)getVaccinationDataMapper:(id (^)(NSString *, NSString *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, NSString *, Vaccination_trackerLong *))mapper __attribute__((swift_name("getVaccinationData(mapper:)")));
+- (void)insertVaccinationDataIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("insertVaccinationData(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("DatabaseDriverFactory")))
+@interface Vaccination_trackerDatabaseDriverFactory : Vaccination_trackerBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (id<Vaccination_trackerRuntimeSqlDriver>)createDriver __attribute__((swift_name("createDriver()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -366,80 +440,6 @@ __attribute__((swift_name("Vaccinations.Companion")))
 - (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end;
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("CovidVaccinationData")))
-@interface Vaccination_trackerCovidVaccinationData : Vaccination_trackerBase
-- (instancetype)initWithIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("init(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)"))) __attribute__((objc_designated_initializer));
-- (NSString *)component1 __attribute__((swift_name("component1()")));
-- (double)component10 __attribute__((swift_name("component10()")));
-- (NSString *)component11 __attribute__((swift_name("component11()")));
-- (int64_t)component12 __attribute__((swift_name("component12()")));
-- (NSString *)component2 __attribute__((swift_name("component2()")));
-- (int64_t)component3 __attribute__((swift_name("component3()")));
-- (double)component4 __attribute__((swift_name("component4()")));
-- (int64_t)component5 __attribute__((swift_name("component5()")));
-- (double)component6 __attribute__((swift_name("component6()")));
-- (int64_t)component7 __attribute__((swift_name("component7()")));
-- (double)component8 __attribute__((swift_name("component8()")));
-- (int64_t)component9 __attribute__((swift_name("component9()")));
-- (Vaccination_trackerCovidVaccinationData *)doCopyIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("doCopy(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) int64_t firstDose __attribute__((swift_name("firstDose")));
-@property (readonly) double firstDosePercentage __attribute__((swift_name("firstDosePercentage")));
-@property (readonly) int64_t fullyVaccinated __attribute__((swift_name("fullyVaccinated")));
-@property (readonly) double fullyVaccinatedPercentage __attribute__((swift_name("fullyVaccinatedPercentage")));
-@property (readonly) NSString *isoCode __attribute__((swift_name("isoCode")));
-@property (readonly) NSString *lastUpdate __attribute__((swift_name("lastUpdate")));
-@property (readonly) int64_t secondDose __attribute__((swift_name("secondDose")));
-@property (readonly) double secondDosePercentage __attribute__((swift_name("secondDosePercentage")));
-@property (readonly) int64_t singleDose __attribute__((swift_name("singleDose")));
-@property (readonly) double singleDosePercentage __attribute__((swift_name("singleDosePercentage")));
-@property (readonly) NSString *state __attribute__((swift_name("state")));
-@property (readonly) int64_t total __attribute__((swift_name("total")));
-@end;
-
-__attribute__((swift_name("RuntimeTransacter")))
-@protocol Vaccination_trackerRuntimeTransacter
-@required
-- (void)transactionNoEnclosing:(BOOL)noEnclosing body:(void (^)(id<Vaccination_trackerRuntimeTransactionWithoutReturn>))body __attribute__((swift_name("transaction(noEnclosing:body:)")));
-- (id _Nullable)transactionWithResultNoEnclosing:(BOOL)noEnclosing bodyWithReturn:(id _Nullable (^)(id<Vaccination_trackerRuntimeTransactionWithReturn>))bodyWithReturn __attribute__((swift_name("transactionWithResult(noEnclosing:bodyWithReturn:)")));
-@end;
-
-__attribute__((swift_name("CovidVaccinationDatabase")))
-@protocol Vaccination_trackerCovidVaccinationDatabase <Vaccination_trackerRuntimeTransacter>
-@required
-@property (readonly) id<Vaccination_trackerCovidVaccinationDatabaseQueries> covidVaccinationDatabaseQueries __attribute__((swift_name("covidVaccinationDatabaseQueries")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("CovidVaccinationDatabaseCompanion")))
-@interface Vaccination_trackerCovidVaccinationDatabaseCompanion : Vaccination_trackerBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-- (id<Vaccination_trackerCovidVaccinationDatabase>)invokeDriver:(id<Vaccination_trackerRuntimeSqlDriver>)driver __attribute__((swift_name("invoke(driver:)")));
-@property (readonly) id<Vaccination_trackerRuntimeSqlDriverSchema> Schema __attribute__((swift_name("Schema")));
-@end;
-
-__attribute__((swift_name("CovidVaccinationDatabaseQueries")))
-@protocol Vaccination_trackerCovidVaccinationDatabaseQueries <Vaccination_trackerRuntimeTransacter>
-@required
-- (void)clear __attribute__((swift_name("clear()")));
-- (Vaccination_trackerRuntimeQuery<Vaccination_trackerCovidVaccinationData *> *)getVaccinationData __attribute__((swift_name("getVaccinationData()")));
-- (Vaccination_trackerRuntimeQuery<id> *)getVaccinationDataMapper:(id (^)(NSString *, NSString *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, Vaccination_trackerLong *, Vaccination_trackerDouble *, NSString *, Vaccination_trackerLong *))mapper __attribute__((swift_name("getVaccinationData(mapper:)")));
-- (void)insertVaccinationDataIsoCode:(NSString *)isoCode state:(NSString *)state singleDose:(int64_t)singleDose singleDosePercentage:(double)singleDosePercentage firstDose:(int64_t)firstDose firstDosePercentage:(double)firstDosePercentage secondDose:(int64_t)secondDose secondDosePercentage:(double)secondDosePercentage fullyVaccinated:(int64_t)fullyVaccinated fullyVaccinatedPercentage:(double)fullyVaccinatedPercentage lastUpdate:(NSString *)lastUpdate total:(int64_t)total __attribute__((swift_name("insertVaccinationData(isoCode:state:singleDose:singleDosePercentage:firstDose:firstDosePercentage:secondDose:secondDosePercentage:fullyVaccinated:fullyVaccinatedPercentage:lastUpdate:total:)")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("DatabaseDriverFactory")))
-@interface Vaccination_trackerDatabaseDriverFactory : Vaccination_trackerBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (id<Vaccination_trackerRuntimeSqlDriver>)createDriver __attribute__((swift_name("createDriver()")));
-@end;
-
 __attribute__((swift_name("KotlinThrowable")))
 @interface Vaccination_trackerKotlinThrowable : Vaccination_trackerBase
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
@@ -489,25 +489,6 @@ __attribute__((swift_name("KotlinCancellationException")))
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(Vaccination_trackerKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)initWithCause:(Vaccination_trackerKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
-@end;
-
-__attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
-@protocol Vaccination_trackerKotlinx_serialization_coreSerializationStrategy
-@required
-- (void)serializeEncoder:(id<Vaccination_trackerKotlinx_serialization_coreEncoder>)encoder value:(id _Nullable)value __attribute__((swift_name("serialize(encoder:value:)")));
-@property (readonly) id<Vaccination_trackerKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
-@end;
-
-__attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
-@protocol Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy
-@required
-- (id _Nullable)deserializeDecoder:(id<Vaccination_trackerKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
-@property (readonly) id<Vaccination_trackerKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
-@end;
-
-__attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
-@protocol Vaccination_trackerKotlinx_serialization_coreKSerializer <Vaccination_trackerKotlinx_serialization_coreSerializationStrategy, Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy>
-@required
 @end;
 
 __attribute__((swift_name("RuntimeTransactionCallbacks")))
@@ -567,6 +548,25 @@ __attribute__((swift_name("RuntimeQuery")))
 @property (readonly) RowType (^mapper)(id<Vaccination_trackerRuntimeSqlCursor>) __attribute__((swift_name("mapper")));
 @end;
 
+__attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
+@protocol Vaccination_trackerKotlinx_serialization_coreSerializationStrategy
+@required
+- (void)serializeEncoder:(id<Vaccination_trackerKotlinx_serialization_coreEncoder>)encoder value:(id _Nullable)value __attribute__((swift_name("serialize(encoder:value:)")));
+@property (readonly) id<Vaccination_trackerKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
+@end;
+
+__attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
+@protocol Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy
+@required
+- (id _Nullable)deserializeDecoder:(id<Vaccination_trackerKotlinx_serialization_coreDecoder>)decoder __attribute__((swift_name("deserialize(decoder:)")));
+@property (readonly) id<Vaccination_trackerKotlinx_serialization_coreSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
+@end;
+
+__attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
+@protocol Vaccination_trackerKotlinx_serialization_coreKSerializer <Vaccination_trackerKotlinx_serialization_coreSerializationStrategy, Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy>
+@required
+@end;
+
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("KotlinArray")))
 @interface Vaccination_trackerKotlinArray<T> : Vaccination_trackerBase
@@ -577,6 +577,41 @@ __attribute__((swift_name("KotlinArray")))
 - (id<Vaccination_trackerKotlinIterator>)iterator __attribute__((swift_name("iterator()")));
 - (void)setIndex:(int32_t)index value:(T _Nullable)value __attribute__((swift_name("set(index:value:)")));
 @property (readonly) int32_t size __attribute__((swift_name("size")));
+@end;
+
+__attribute__((swift_name("RuntimeTransacterTransaction")))
+@interface Vaccination_trackerRuntimeTransacterTransaction : Vaccination_trackerBase <Vaccination_trackerRuntimeTransactionCallbacks>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)afterCommitFunction:(void (^)(void))function __attribute__((swift_name("afterCommit(function:)")));
+- (void)afterRollbackFunction:(void (^)(void))function __attribute__((swift_name("afterRollback(function:)")));
+- (void)endTransactionSuccessful:(BOOL)successful __attribute__((swift_name("endTransaction(successful:)")));
+@property (readonly) Vaccination_trackerRuntimeTransacterTransaction * _Nullable enclosingTransaction __attribute__((swift_name("enclosingTransaction")));
+@end;
+
+__attribute__((swift_name("RuntimeSqlPreparedStatement")))
+@protocol Vaccination_trackerRuntimeSqlPreparedStatement
+@required
+- (void)bindBytesIndex:(int32_t)index bytes:(Vaccination_trackerKotlinByteArray * _Nullable)bytes __attribute__((swift_name("bindBytes(index:bytes:)")));
+- (void)bindDoubleIndex:(int32_t)index double:(Vaccination_trackerDouble * _Nullable)double_ __attribute__((swift_name("bindDouble(index:double:)")));
+- (void)bindLongIndex:(int32_t)index long:(Vaccination_trackerLong * _Nullable)long_ __attribute__((swift_name("bindLong(index:long:)")));
+- (void)bindStringIndex:(int32_t)index string:(NSString * _Nullable)string __attribute__((swift_name("bindString(index:string:)")));
+@end;
+
+__attribute__((swift_name("RuntimeSqlCursor")))
+@protocol Vaccination_trackerRuntimeSqlCursor <Vaccination_trackerRuntimeCloseable>
+@required
+- (Vaccination_trackerKotlinByteArray * _Nullable)getBytesIndex:(int32_t)index __attribute__((swift_name("getBytes(index:)")));
+- (Vaccination_trackerDouble * _Nullable)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
+- (Vaccination_trackerLong * _Nullable)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
+- (NSString * _Nullable)getStringIndex:(int32_t)index __attribute__((swift_name("getString(index:)")));
+- (BOOL)next __attribute__((swift_name("next()")));
+@end;
+
+__attribute__((swift_name("RuntimeQueryListener")))
+@protocol Vaccination_trackerRuntimeQueryListener
+@required
+- (void)queryResultsChanged __attribute__((swift_name("queryResultsChanged()")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
@@ -640,46 +675,24 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 @property (readonly) Vaccination_trackerKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
 @end;
 
-__attribute__((swift_name("RuntimeTransacterTransaction")))
-@interface Vaccination_trackerRuntimeTransacterTransaction : Vaccination_trackerBase <Vaccination_trackerRuntimeTransactionCallbacks>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (void)afterCommitFunction:(void (^)(void))function __attribute__((swift_name("afterCommit(function:)")));
-- (void)afterRollbackFunction:(void (^)(void))function __attribute__((swift_name("afterRollback(function:)")));
-- (void)endTransactionSuccessful:(BOOL)successful __attribute__((swift_name("endTransaction(successful:)")));
-@property (readonly) Vaccination_trackerRuntimeTransacterTransaction * _Nullable enclosingTransaction __attribute__((swift_name("enclosingTransaction")));
-@end;
-
-__attribute__((swift_name("RuntimeSqlPreparedStatement")))
-@protocol Vaccination_trackerRuntimeSqlPreparedStatement
-@required
-- (void)bindBytesIndex:(int32_t)index bytes:(Vaccination_trackerKotlinByteArray * _Nullable)bytes __attribute__((swift_name("bindBytes(index:bytes:)")));
-- (void)bindDoubleIndex:(int32_t)index double:(Vaccination_trackerDouble * _Nullable)double_ __attribute__((swift_name("bindDouble(index:double:)")));
-- (void)bindLongIndex:(int32_t)index long:(Vaccination_trackerLong * _Nullable)long_ __attribute__((swift_name("bindLong(index:long:)")));
-- (void)bindStringIndex:(int32_t)index string:(NSString * _Nullable)string __attribute__((swift_name("bindString(index:string:)")));
-@end;
-
-__attribute__((swift_name("RuntimeSqlCursor")))
-@protocol Vaccination_trackerRuntimeSqlCursor <Vaccination_trackerRuntimeCloseable>
-@required
-- (Vaccination_trackerKotlinByteArray * _Nullable)getBytesIndex:(int32_t)index __attribute__((swift_name("getBytes(index:)")));
-- (Vaccination_trackerDouble * _Nullable)getDoubleIndex:(int32_t)index __attribute__((swift_name("getDouble(index:)")));
-- (Vaccination_trackerLong * _Nullable)getLongIndex:(int32_t)index __attribute__((swift_name("getLong(index:)")));
-- (NSString * _Nullable)getStringIndex:(int32_t)index __attribute__((swift_name("getString(index:)")));
-- (BOOL)next __attribute__((swift_name("next()")));
-@end;
-
-__attribute__((swift_name("RuntimeQueryListener")))
-@protocol Vaccination_trackerRuntimeQueryListener
-@required
-- (void)queryResultsChanged __attribute__((swift_name("queryResultsChanged()")));
-@end;
-
 __attribute__((swift_name("KotlinIterator")))
 @protocol Vaccination_trackerKotlinIterator
 @required
 - (BOOL)hasNext __attribute__((swift_name("hasNext()")));
 - (id _Nullable)next_ __attribute__((swift_name("next_()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("KotlinByteArray")))
+@interface Vaccination_trackerKotlinByteArray : Vaccination_trackerBase
++ (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
++ (instancetype)arrayWithSize:(int32_t)size init:(Vaccination_trackerByte *(^)(Vaccination_trackerInt *))init __attribute__((swift_name("init(size:init:)")));
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
+- (int8_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
+- (Vaccination_trackerKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
+- (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
+@property (readonly) int32_t size __attribute__((swift_name("size")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
@@ -752,17 +765,12 @@ __attribute__((swift_name("KotlinNothing")))
 @interface Vaccination_trackerKotlinNothing : Vaccination_trackerBase
 @end;
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinByteArray")))
-@interface Vaccination_trackerKotlinByteArray : Vaccination_trackerBase
-+ (instancetype)arrayWithSize:(int32_t)size __attribute__((swift_name("init(size:)")));
-+ (instancetype)arrayWithSize:(int32_t)size init:(Vaccination_trackerByte *(^)(Vaccination_trackerInt *))init __attribute__((swift_name("init(size:init:)")));
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-- (int8_t)getIndex:(int32_t)index __attribute__((swift_name("get(index:)")));
-- (Vaccination_trackerKotlinByteIterator *)iterator __attribute__((swift_name("iterator()")));
-- (void)setIndex:(int32_t)index value:(int8_t)value __attribute__((swift_name("set(index:value:)")));
-@property (readonly) int32_t size __attribute__((swift_name("size")));
+__attribute__((swift_name("KotlinByteIterator")))
+@interface Vaccination_trackerKotlinByteIterator : Vaccination_trackerBase <Vaccination_trackerKotlinIterator>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (Vaccination_trackerByte *)next_ __attribute__((swift_name("next_()")));
+- (int8_t)nextByte __attribute__((swift_name("nextByte()")));
 @end;
 
 __attribute__((swift_name("Kotlinx_serialization_coreSerializersModuleCollector")))
@@ -795,14 +803,6 @@ __attribute__((swift_name("KotlinKClass")))
 - (BOOL)isInstanceValue:(id _Nullable)value __attribute__((swift_name("isInstance(value:)")));
 @property (readonly) NSString * _Nullable qualifiedName __attribute__((swift_name("qualifiedName")));
 @property (readonly) NSString * _Nullable simpleName __attribute__((swift_name("simpleName")));
-@end;
-
-__attribute__((swift_name("KotlinByteIterator")))
-@interface Vaccination_trackerKotlinByteIterator : Vaccination_trackerBase <Vaccination_trackerKotlinIterator>
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (Vaccination_trackerByte *)next_ __attribute__((swift_name("next_()")));
-- (int8_t)nextByte __attribute__((swift_name("nextByte()")));
 @end;
 
 #pragma clang diagnostic pop
