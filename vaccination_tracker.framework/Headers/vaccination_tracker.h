@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class Vaccination_trackerDatabaseDriverFactory, Vaccination_trackerVaccinationDataResponseItem, Vaccination_trackerCovidVaccinationData, Vaccination_trackerRuntimeQuery<__covariant RowType>, Vaccination_trackerAverage14days, Vaccination_trackerAverage7days, Vaccination_trackerDailyVaccinations, Vaccination_trackerTotalVaccinations, Vaccination_trackerVaccinations, Vaccination_trackerKotlinThrowable, Vaccination_trackerKotlinArray<T>, Vaccination_trackerKotlinException, Vaccination_trackerKotlinRuntimeException, Vaccination_trackerKotlinIllegalStateException, Vaccination_trackerRuntimeTransacterTransaction, Vaccination_trackerKotlinByteArray, Vaccination_trackerKotlinx_serialization_coreSerializersModule, Vaccination_trackerKotlinx_serialization_coreSerialKind, Vaccination_trackerKotlinNothing, Vaccination_trackerKotlinByteIterator;
+@class Vaccination_trackerDatabaseDriverFactory, Vaccination_trackerVaccinationDataResponseItem, Vaccination_trackerCovidVaccinationData, Vaccination_trackerRuntimeQuery<__covariant RowType>, Vaccination_trackerAverage14days, Vaccination_trackerAverage7days, Vaccination_trackerCases, Vaccination_trackerDeaths, Vaccination_trackerRecovered, Vaccination_trackerSuspects, Vaccination_trackerTests, Vaccination_trackerVaccinations, Vaccination_trackerCovidStatsSummary, Vaccination_trackerDailyVaccinations, Vaccination_trackerTotalVaccinations, Vaccination_trackerKotlinThrowable, Vaccination_trackerKotlinArray<T>, Vaccination_trackerKotlinException, Vaccination_trackerKotlinRuntimeException, Vaccination_trackerKotlinIllegalStateException, Vaccination_trackerRuntimeTransacterTransaction, Vaccination_trackerKotlinByteArray, Vaccination_trackerKotlinx_serialization_coreSerializersModule, Vaccination_trackerKotlinx_serialization_coreSerialKind, Vaccination_trackerKotlinNothing, Vaccination_trackerKotlinByteIterator;
 
 @protocol Vaccination_trackerCovidVaccinationDatabaseQueries, Vaccination_trackerRuntimeTransactionWithoutReturn, Vaccination_trackerRuntimeTransactionWithReturn, Vaccination_trackerRuntimeTransacter, Vaccination_trackerCovidVaccinationDatabase, Vaccination_trackerRuntimeSqlDriver, Vaccination_trackerRuntimeSqlDriverSchema, Vaccination_trackerKotlinx_serialization_coreKSerializer, Vaccination_trackerRuntimeTransactionCallbacks, Vaccination_trackerRuntimeSqlPreparedStatement, Vaccination_trackerRuntimeSqlCursor, Vaccination_trackerRuntimeCloseable, Vaccination_trackerRuntimeQueryListener, Vaccination_trackerKotlinx_serialization_coreEncoder, Vaccination_trackerKotlinx_serialization_coreSerialDescriptor, Vaccination_trackerKotlinx_serialization_coreSerializationStrategy, Vaccination_trackerKotlinx_serialization_coreDecoder, Vaccination_trackerKotlinx_serialization_coreDeserializationStrategy, Vaccination_trackerKotlinIterator, Vaccination_trackerKotlinx_serialization_coreCompositeEncoder, Vaccination_trackerKotlinAnnotation, Vaccination_trackerKotlinx_serialization_coreCompositeDecoder, Vaccination_trackerKotlinx_serialization_coreSerializersModuleCollector, Vaccination_trackerKotlinKClass, Vaccination_trackerKotlinKDeclarationContainer, Vaccination_trackerKotlinKAnnotatedElement, Vaccination_trackerKotlinKClassifier;
 
@@ -289,6 +289,68 @@ __attribute__((swift_name("Average7days.Companion")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Cases")))
+@interface Vaccination_trackerCases : Vaccination_trackerBase
+- (instancetype)initWithDate:(NSString *)date last_update:(NSString *)last_update new:(Vaccination_trackerInt * _Nullable)new_ total:(int32_t)total __attribute__((swift_name("init(date:last_update:new:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (Vaccination_trackerInt * _Nullable)component3 __attribute__((swift_name("component3()")));
+- (int32_t)component4 __attribute__((swift_name("component4()")));
+- (Vaccination_trackerCases *)doCopyDate:(NSString *)date last_update:(NSString *)last_update new:(Vaccination_trackerInt * _Nullable)new_ total:(int32_t)total __attribute__((swift_name("doCopy(date:last_update:new:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *last_update __attribute__((swift_name("last_update")));
+@property (readonly, getter=doNew) Vaccination_trackerInt * _Nullable new_ __attribute__((swift_name("new_")));
+@property (readonly) int32_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Cases.Companion")))
+@interface Vaccination_trackerCasesCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("CovidStatsSummary")))
+@interface Vaccination_trackerCovidStatsSummary : Vaccination_trackerBase
+- (instancetype)initWithCases:(Vaccination_trackerCases *)cases deaths:(Vaccination_trackerDeaths *)deaths iso_code:(NSString *)iso_code recovered:(Vaccination_trackerRecovered *)recovered state:(NSString *)state suspects:(Vaccination_trackerSuspects *)suspects tests:(Vaccination_trackerTests *)tests vaccinations:(Vaccination_trackerVaccinations *)vaccinations __attribute__((swift_name("init(cases:deaths:iso_code:recovered:state:suspects:tests:vaccinations:)"))) __attribute__((objc_designated_initializer));
+- (Vaccination_trackerCases *)component1 __attribute__((swift_name("component1()")));
+- (Vaccination_trackerDeaths *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (Vaccination_trackerRecovered *)component4 __attribute__((swift_name("component4()")));
+- (NSString *)component5 __attribute__((swift_name("component5()")));
+- (Vaccination_trackerSuspects *)component6 __attribute__((swift_name("component6()")));
+- (Vaccination_trackerTests *)component7 __attribute__((swift_name("component7()")));
+- (Vaccination_trackerVaccinations *)component8 __attribute__((swift_name("component8()")));
+- (Vaccination_trackerCovidStatsSummary *)doCopyCases:(Vaccination_trackerCases *)cases deaths:(Vaccination_trackerDeaths *)deaths iso_code:(NSString *)iso_code recovered:(Vaccination_trackerRecovered *)recovered state:(NSString *)state suspects:(Vaccination_trackerSuspects *)suspects tests:(Vaccination_trackerTests *)tests vaccinations:(Vaccination_trackerVaccinations *)vaccinations __attribute__((swift_name("doCopy(cases:deaths:iso_code:recovered:state:suspects:tests:vaccinations:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) Vaccination_trackerCases *cases __attribute__((swift_name("cases")));
+@property (readonly) Vaccination_trackerDeaths *deaths __attribute__((swift_name("deaths")));
+@property (readonly) NSString *iso_code __attribute__((swift_name("iso_code")));
+@property (readonly) Vaccination_trackerRecovered *recovered __attribute__((swift_name("recovered")));
+@property (readonly) NSString *state __attribute__((swift_name("state")));
+@property (readonly) Vaccination_trackerSuspects *suspects __attribute__((swift_name("suspects")));
+@property (readonly) Vaccination_trackerTests *tests __attribute__((swift_name("tests")));
+@property (readonly) Vaccination_trackerVaccinations *vaccinations __attribute__((swift_name("vaccinations")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("CovidStatsSummary.Companion")))
+@interface Vaccination_trackerCovidStatsSummaryCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DailyVaccinations")))
 @interface Vaccination_trackerDailyVaccinations : Vaccination_trackerBase
 - (instancetype)initWithSingleDose:(Vaccination_trackerInt * _Nullable)singleDose firstDose:(Vaccination_trackerInt * _Nullable)firstDose secondDose:(Vaccination_trackerInt * _Nullable)secondDose fullyVaccinated:(Vaccination_trackerInt * _Nullable)fullyVaccinated total:(Vaccination_trackerInt * _Nullable)total __attribute__((swift_name("init(singleDose:firstDose:secondDose:fullyVaccinated:total:)"))) __attribute__((objc_designated_initializer));
@@ -311,6 +373,108 @@ __attribute__((swift_name("DailyVaccinations")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("DailyVaccinations.Companion")))
 @interface Vaccination_trackerDailyVaccinationsCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Deaths")))
+@interface Vaccination_trackerDeaths : Vaccination_trackerBase
+- (instancetype)initWithDate:(NSString *)date last_update:(NSString *)last_update new:(Vaccination_trackerInt * _Nullable)new_ total:(int32_t)total __attribute__((swift_name("init(date:last_update:new:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (Vaccination_trackerInt * _Nullable)component3 __attribute__((swift_name("component3()")));
+- (int32_t)component4 __attribute__((swift_name("component4()")));
+- (Vaccination_trackerDeaths *)doCopyDate:(NSString *)date last_update:(NSString *)last_update new:(Vaccination_trackerInt * _Nullable)new_ total:(int32_t)total __attribute__((swift_name("doCopy(date:last_update:new:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *last_update __attribute__((swift_name("last_update")));
+@property (readonly, getter=doNew) Vaccination_trackerInt * _Nullable new_ __attribute__((swift_name("new_")));
+@property (readonly) int32_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Deaths.Companion")))
+@interface Vaccination_trackerDeathsCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Recovered")))
+@interface Vaccination_trackerRecovered : Vaccination_trackerBase
+- (instancetype)initWithDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("init(date:last_update:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (Vaccination_trackerRecovered *)doCopyDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("doCopy(date:last_update:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *last_update __attribute__((swift_name("last_update")));
+@property (readonly) int32_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Recovered.Companion")))
+@interface Vaccination_trackerRecoveredCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Suspects")))
+@interface Vaccination_trackerSuspects : Vaccination_trackerBase
+- (instancetype)initWithDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("init(date:last_update:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (Vaccination_trackerSuspects *)doCopyDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("doCopy(date:last_update:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *last_update __attribute__((swift_name("last_update")));
+@property (readonly) int32_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Suspects.Companion")))
+@interface Vaccination_trackerSuspectsCompanion : Vaccination_trackerBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+- (id<Vaccination_trackerKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Tests")))
+@interface Vaccination_trackerTests : Vaccination_trackerBase
+- (instancetype)initWithDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("init(date:last_update:total:)"))) __attribute__((objc_designated_initializer));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (int32_t)component3 __attribute__((swift_name("component3()")));
+- (Vaccination_trackerTests *)doCopyDate:(NSString *)date last_update:(NSString *)last_update total:(int32_t)total __attribute__((swift_name("doCopy(date:last_update:total:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *last_update __attribute__((swift_name("last_update")));
+@property (readonly) int32_t total __attribute__((swift_name("total")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Tests.Companion")))
+@interface Vaccination_trackerTestsCompanion : Vaccination_trackerBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
