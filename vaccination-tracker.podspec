@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 s.name          = "vaccination-tracker"
-s.version       = "1.0.17"
+s.version       = "1.0.18"
 s.summary       = "Brazilian Covid vaccination Data per state"
 s.homepage      = "https://github.com/iurysza/kmmpoc"
 s.description   = "A library that provides Brazilian vaccination data built with kotlin multiplatform"
