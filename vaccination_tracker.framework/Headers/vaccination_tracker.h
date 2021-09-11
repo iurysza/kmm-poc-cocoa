@@ -521,28 +521,28 @@ __attribute__((swift_name("TotalVaccinations.Companion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("VaccinationDataResponseItem")))
 @interface Vaccination_trackerVaccinationDataResponseItem : Vaccination_trackerBase
-- (instancetype)initWithAverage14Days:(Vaccination_trackerAverage14days *)average14Days average7Days:(Vaccination_trackerAverage7days *)average7Days dailyVaccinations:(Vaccination_trackerDailyVaccinations *)dailyVaccinations isoCode:(NSString *)isoCode lastUpdate:(NSString *)lastUpdate lastUpdateDate:(NSString *)lastUpdateDate peopleFullyVaccinatedPerHundred:(int32_t)peopleFullyVaccinatedPerHundred peopleVaccinatedPerHundred:(int32_t)peopleVaccinatedPerHundred sourceName:(NSString *)sourceName sourceWebsite:(NSString *)sourceWebsite state:(NSString *)state totalVaccinations:(Vaccination_trackerTotalVaccinations *)totalVaccinations totalVaccinationsPerHundred:(int32_t)totalVaccinationsPerHundred vaccines:(NSArray<NSString *> *)vaccines __attribute__((swift_name("init(average14Days:average7Days:dailyVaccinations:isoCode:lastUpdate:lastUpdateDate:peopleFullyVaccinatedPerHundred:peopleVaccinatedPerHundred:sourceName:sourceWebsite:state:totalVaccinations:totalVaccinationsPerHundred:vaccines:)"))) __attribute__((objc_designated_initializer));
-- (Vaccination_trackerAverage14days *)component1 __attribute__((swift_name("component1()")));
+- (instancetype)initWithAverage14Days:(Vaccination_trackerAverage14days * _Nullable)average14Days average7Days:(Vaccination_trackerAverage7days * _Nullable)average7Days dailyVaccinations:(Vaccination_trackerDailyVaccinations * _Nullable)dailyVaccinations isoCode:(NSString *)isoCode lastUpdate:(NSString *)lastUpdate lastUpdateDate:(NSString *)lastUpdateDate peopleFullyVaccinatedPerHundred:(int32_t)peopleFullyVaccinatedPerHundred peopleVaccinatedPerHundred:(int32_t)peopleVaccinatedPerHundred sourceName:(NSString *)sourceName sourceWebsite:(NSString *)sourceWebsite state:(NSString *)state totalVaccinations:(Vaccination_trackerTotalVaccinations *)totalVaccinations totalVaccinationsPerHundred:(int32_t)totalVaccinationsPerHundred vaccines:(NSArray<NSString *> *)vaccines __attribute__((swift_name("init(average14Days:average7Days:dailyVaccinations:isoCode:lastUpdate:lastUpdateDate:peopleFullyVaccinatedPerHundred:peopleVaccinatedPerHundred:sourceName:sourceWebsite:state:totalVaccinations:totalVaccinationsPerHundred:vaccines:)"))) __attribute__((objc_designated_initializer));
+- (Vaccination_trackerAverage14days * _Nullable)component1 __attribute__((swift_name("component1()")));
 - (NSString *)component10 __attribute__((swift_name("component10()")));
 - (NSString *)component11 __attribute__((swift_name("component11()")));
 - (Vaccination_trackerTotalVaccinations *)component12 __attribute__((swift_name("component12()")));
 - (int32_t)component13 __attribute__((swift_name("component13()")));
 - (NSArray<NSString *> *)component14 __attribute__((swift_name("component14()")));
-- (Vaccination_trackerAverage7days *)component2 __attribute__((swift_name("component2()")));
-- (Vaccination_trackerDailyVaccinations *)component3 __attribute__((swift_name("component3()")));
+- (Vaccination_trackerAverage7days * _Nullable)component2 __attribute__((swift_name("component2()")));
+- (Vaccination_trackerDailyVaccinations * _Nullable)component3 __attribute__((swift_name("component3()")));
 - (NSString *)component4 __attribute__((swift_name("component4()")));
 - (NSString *)component5 __attribute__((swift_name("component5()")));
 - (NSString *)component6 __attribute__((swift_name("component6()")));
 - (int32_t)component7 __attribute__((swift_name("component7()")));
 - (int32_t)component8 __attribute__((swift_name("component8()")));
 - (NSString *)component9 __attribute__((swift_name("component9()")));
-- (Vaccination_trackerVaccinationDataResponseItem *)doCopyAverage14Days:(Vaccination_trackerAverage14days *)average14Days average7Days:(Vaccination_trackerAverage7days *)average7Days dailyVaccinations:(Vaccination_trackerDailyVaccinations *)dailyVaccinations isoCode:(NSString *)isoCode lastUpdate:(NSString *)lastUpdate lastUpdateDate:(NSString *)lastUpdateDate peopleFullyVaccinatedPerHundred:(int32_t)peopleFullyVaccinatedPerHundred peopleVaccinatedPerHundred:(int32_t)peopleVaccinatedPerHundred sourceName:(NSString *)sourceName sourceWebsite:(NSString *)sourceWebsite state:(NSString *)state totalVaccinations:(Vaccination_trackerTotalVaccinations *)totalVaccinations totalVaccinationsPerHundred:(int32_t)totalVaccinationsPerHundred vaccines:(NSArray<NSString *> *)vaccines __attribute__((swift_name("doCopy(average14Days:average7Days:dailyVaccinations:isoCode:lastUpdate:lastUpdateDate:peopleFullyVaccinatedPerHundred:peopleVaccinatedPerHundred:sourceName:sourceWebsite:state:totalVaccinations:totalVaccinationsPerHundred:vaccines:)")));
+- (Vaccination_trackerVaccinationDataResponseItem *)doCopyAverage14Days:(Vaccination_trackerAverage14days * _Nullable)average14Days average7Days:(Vaccination_trackerAverage7days * _Nullable)average7Days dailyVaccinations:(Vaccination_trackerDailyVaccinations * _Nullable)dailyVaccinations isoCode:(NSString *)isoCode lastUpdate:(NSString *)lastUpdate lastUpdateDate:(NSString *)lastUpdateDate peopleFullyVaccinatedPerHundred:(int32_t)peopleFullyVaccinatedPerHundred peopleVaccinatedPerHundred:(int32_t)peopleVaccinatedPerHundred sourceName:(NSString *)sourceName sourceWebsite:(NSString *)sourceWebsite state:(NSString *)state totalVaccinations:(Vaccination_trackerTotalVaccinations *)totalVaccinations totalVaccinationsPerHundred:(int32_t)totalVaccinationsPerHundred vaccines:(NSArray<NSString *> *)vaccines __attribute__((swift_name("doCopy(average14Days:average7Days:dailyVaccinations:isoCode:lastUpdate:lastUpdateDate:peopleFullyVaccinatedPerHundred:peopleVaccinatedPerHundred:sourceName:sourceWebsite:state:totalVaccinations:totalVaccinationsPerHundred:vaccines:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) Vaccination_trackerAverage14days *average14Days __attribute__((swift_name("average14Days")));
-@property (readonly) Vaccination_trackerAverage7days *average7Days __attribute__((swift_name("average7Days")));
-@property (readonly) Vaccination_trackerDailyVaccinations *dailyVaccinations __attribute__((swift_name("dailyVaccinations")));
+@property (readonly) Vaccination_trackerAverage14days * _Nullable average14Days __attribute__((swift_name("average14Days")));
+@property (readonly) Vaccination_trackerAverage7days * _Nullable average7Days __attribute__((swift_name("average7Days")));
+@property (readonly) Vaccination_trackerDailyVaccinations * _Nullable dailyVaccinations __attribute__((swift_name("dailyVaccinations")));
 @property (readonly) NSString *isoCode __attribute__((swift_name("isoCode")));
 @property (readonly) NSString *lastUpdate __attribute__((swift_name("lastUpdate")));
 @property (readonly) NSString *lastUpdateDate __attribute__((swift_name("lastUpdateDate")));
@@ -756,10 +756,10 @@ __attribute__((swift_name("RuntimeTransacterTransaction")))
 __attribute__((swift_name("RuntimeSqlPreparedStatement")))
 @protocol Vaccination_trackerRuntimeSqlPreparedStatement
 @required
-- (void)bindBytesIndex:(int32_t)index bytes:(Vaccination_trackerKotlinByteArray * _Nullable)bytes __attribute__((swift_name("bindBytes(index:bytes:)")));
-- (void)bindDoubleIndex:(int32_t)index double:(Vaccination_trackerDouble * _Nullable)double_ __attribute__((swift_name("bindDouble(index:double:)")));
-- (void)bindLongIndex:(int32_t)index long:(Vaccination_trackerLong * _Nullable)long_ __attribute__((swift_name("bindLong(index:long:)")));
-- (void)bindStringIndex:(int32_t)index string:(NSString * _Nullable)string __attribute__((swift_name("bindString(index:string:)")));
+- (void)bindBytesIndex:(int32_t)index value:(Vaccination_trackerKotlinByteArray * _Nullable)value __attribute__((swift_name("bindBytes(index:value:)")));
+- (void)bindDoubleIndex:(int32_t)index value:(Vaccination_trackerDouble * _Nullable)value __attribute__((swift_name("bindDouble(index:value:)")));
+- (void)bindLongIndex:(int32_t)index value:(Vaccination_trackerLong * _Nullable)value __attribute__((swift_name("bindLong(index:value:)")));
+- (void)bindStringIndex:(int32_t)index value:(NSString * _Nullable)value __attribute__((swift_name("bindString(index:value:)")));
 @end;
 
 __attribute__((swift_name("RuntimeSqlCursor")))
